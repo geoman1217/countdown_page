@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
+  <title>Birthday Countdown!</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: url('Cake (11).jpg') no-repeat center center fixed;
+      background: url('https://source.unsplash.com/1600x900/?stars,sky') no-repeat center center fixed;
       background-size: cover;
       color: white;
       display: flex;
@@ -64,9 +64,15 @@
   </div>
 
   <script>
-    const countdown = () => {
-      const launchDate = new Date("2025-07-01T00:00:00").getTime();
-      const now = new Date().getTime();
+    let launchYear = 2025;
+    const updateCountdown = () => {
+      let launchDate = new Date(`${launchYear}-07-01T00:00:00`).getTime();
+      let now = new Date().getTime();
+      if (now >= launchDate) {
+        launchYear++;
+        launchDate = new Date(`${launchYear}-07-01T00:00:00`).getTime();
+      }
+
       const gap = launchDate - now;
 
       const second = 1000;
@@ -85,7 +91,7 @@
       document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
     };
 
-    setInterval(countdown, 1000);
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
