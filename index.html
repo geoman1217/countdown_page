@@ -43,7 +43,7 @@
   </style>
 </head>
 <body>
-  <h1>Days to Shepard's Birthday!</h1>
+  <h1>Days to Solomon's Birthday!</h1>
   <div class="countdown">
     <div class="time-box">
       <div id="days">00</div>
@@ -66,11 +66,11 @@
   <script>
     let launchYear = 2025;
     const updateCountdown = () => {
-      let launchDate = new Date(`${launchYear}-07-01T00:00:00`).getTime();
+      let launchDate = new Date(`${launchYear}-08-24T00:00:00`).getTime();
       let now = new Date().getTime();
       if (now >= launchDate) {
         launchYear++;
-        launchDate = new Date(`${launchYear}-07-01T00:00:00`).getTime();
+        launchDate = new Date(`${launchYear}-08-24T00:00:00`).getTime();
       }
 
       const gap = launchDate - now;
